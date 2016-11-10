@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
   def create_post
     @item = item.new
-    @item.name = new_params[:name]
+    @item.name = new_params[:description]
     @item.user_id = current_user.id
     @item.price = new_params[:price]
     @item.sold = false
@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
   private
 
   def new_params
-    params.require(:item).permit(:name, :price, :photo)
+    params.require(:item).permit(:description, :price, :photo)
   end
 
 end
