@@ -1,6 +1,6 @@
-class CreateItems < ActiveRecord::Migration
+class CreateSalePosts < ActiveRecord::Migration
   def change
-    create_table :items do |t|
+    create_table :sale_posts do |t|
       t.string :name
       t.integer :user_id
       t.integer :price
