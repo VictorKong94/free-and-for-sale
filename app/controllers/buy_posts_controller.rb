@@ -20,7 +20,7 @@ class BuyPostsController < ApplicationController
     end
   end
 
-  def mark
+  def toggle
     @buy_post = BuyPost.find(params[:id])
     @buy_post.sold ^= true
   end
