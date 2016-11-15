@@ -1,0 +1,44 @@
+<h3>User</h3>
+<p>Name: <%= @user.name if @user.name %></p>
+
+<p class="header"><%= @user.name if @user.name %>'s Sale Posts</p>
+<table>
+  <tr class="header">
+    <td></td>
+    <td>Name</td>
+    <td>Asking price</td>
+    <td>Last edited</td>
+    <% if @user.id == current_user.id %>
+      <td></td>
+      <td></td>
+    <% end %>
+  </tr>
+  <% @sale_posts.each do |post| %>
+    <% unless (@user.id != current_user.id && post.sold == true) %>
+      <tr>
+        <%= render post %>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+
+<p class="header"><%= @user.name if @user.name %>'s Buy Posts</p>
+<table>
+  <tr class="header">
+    <td></td>
+    <td>Name</td>
+    <td>Bidding price</td>
+    <td>Last edited</td>
+    <% if @user.id == current_user.id %>
+      <td></td>
+      <td></td>
+    <% end %>
+  </tr>
+  <% @buy_posts.each do |post| %>
+    <% unless (@user.id != current_user.id && post.filled == true) %>
+      <tr>
+        <%= render post %>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

@@ -20,7 +20,7 @@ class SalePostsController < ApplicationController
     end
   end
 
-  def mark
+  def toggle
     @sale_post = SalePost.find(params[:id])
     @sale_post.sold ^= true
   end
