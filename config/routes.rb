@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+
+  root to: 'home#index'
+
+  get '/buy_posts/new', to: 'buy_posts#new'
+  post '/buy_posts/create', to: 'buy_posts#create'
+
+  get '/sale_posts/new', to: 'sale_posts#new'
+  post '/sale_posts/create', to: 'sale_posts#create'
+
+  resources :users
+
+  #still need to add routes for patching items when they are bought or sold
+
+  # patch '/purchase', to: 'users#purchase'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
