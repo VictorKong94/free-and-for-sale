@@ -21,6 +21,8 @@ class UsersController < ApplicationController
     @sale_posts = SalePost.where(user_id: params[:id])
     @sale_posts = @sale_posts.sort_by { |post| post.updated_at }
 
+    # redirect_to :controller => 'users', :action => 'show', :id => current_user.id
+
   end
 
 end
