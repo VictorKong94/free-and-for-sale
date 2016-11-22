@@ -10,7 +10,7 @@
   </tr>
   <% @all_sale_posts[0..4].each do |post| %>
     <tr>
-      <% render post %>
+      <%= render post %>
     </tr>
   <% end %>
 </table>
@@ -24,6 +24,8 @@
     <td>Last edited</td>
   </tr>
   <% @all_buy_posts[0..4].each do |post| %>
-    <% render post %>
+    <tr>
+      <%= render post %>
+    </tr>
   <% end %>
 </table>
