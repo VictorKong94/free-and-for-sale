@@ -1,31 +1,48 @@
-<h3>Free &amp; For Sale</h3>
+<html>
 
-<p class="header">Recent Sale Posts</p> <!-- Add link to see all sale posts -->
-<table>
-  <tr>
-    <td></td>
-    <td>Name</td>
-    <td>Asking price</td>
-    <td>Last edited</td>
-  </tr>
-  <% @all_sale_posts[0..4].each do |post| %>
-    <tr>
-      <%= render post %>
-    </tr>
-  <% end %>
-</table>
+<head>
+<style>
+  .center {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+    }
+</style>
+</head>
 
-<p class="header">Recent Buy Posts</p> <!-- Add link to see all buy posts -->
-<table>
-  <tr>
-    <td></td>
-    <td>Name</td>
-    <td>Bidding price</td>
-    <td>Last edited</td>
-  </tr>
-  <% @all_buy_posts[0..4].each do |post| %>
-    <tr>
-      <%= render post %>
-    </tr>
-  <% end %>
-</table>
+<body>
+
+  <div class="center">
+    <p class="header">Recent Sale Posts</p> <!-- Add link to see all sale posts -->
+    <table>
+      <tr>
+        <td></td>
+        <td>Name</td>
+        <td>Asking price</td>
+        <td>Last edited</td>
+      </tr>
+      <% @all_sale_posts[0..4].each do |post| %>
+        <tr>
+          <%= render post %>
+        </tr>
+      <% end %>
+    </table>
+
+    <p class="header">Recent Buy Posts</p> <!-- Add link to see all buy posts -->
+    <table>
+      <tr>
+        <td></td>
+        <td>Name</td>
+        <td>Bidding price</td>
+        <td>Last edited</td>
+      </tr>
+      <% @all_buy_posts[0..4].each do |post| %>
+        <tr>
+          <%= render post %>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+
+</body>
+</html>
