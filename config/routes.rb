@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/sale_posts/new', to: 'sale_posts#new'
   post '/sale_posts/create', to: 'sale_posts#create'
 
-  #still need to add routes for patching items when they are bought or sold
+  #still need to add routes for patching items when bought/sold (toggle)
 
   # patch '/purchase', to: 'users#purchase'
 
