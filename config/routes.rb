@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users
   root to: 'home#index'
-  #devise_for :users
-  #resources :users
+  devise_for :users
+  resources :users
 
   get '/buy_posts/new', to: 'buy_posts#new'
   post '/buy_posts/create', to: 'buy_posts#create'
