@@ -9,7 +9,7 @@ class BuyPostsController < ApplicationController
   end
 
   def create
-    @buy_post = BuyPost.new
+    @buy_post = BuyPost.new(new_params)
     @buy_post.name = new_params[:name]
     @buy_post.user_id = current_user.id
     @buy_post.price = new_params[:price]
@@ -37,7 +37,7 @@ class BuyPostsController < ApplicationController
   private
 
   def new_params
-    params.require(:item).permit(:name, :price, :photo)
+    params.require(:buy_post).permit(:name, :price, :photo)
   end
 
 end
