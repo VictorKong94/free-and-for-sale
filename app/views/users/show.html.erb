@@ -1,7 +1,7 @@
 <h3>User</h3>
-<p>Name: <%= @user.name if @user.name %></p>
+<p>Name: <%= current_user.name %></p>
 
-<p class="header"><%= @user.name if @user.name %>'s Sale Posts</p>
+<p class="header"><%= current_user.name %>'s Sale Posts</p>
 <table>
   <tr class="header">
     <td></td>
@@ -22,7 +22,7 @@
   <% end %>
 </table>
 
-<p class="header"><%= @user.name if @user.name %>'s Buy Posts</p>
+<p class="header"><%= current_user.name %>'s Buy Posts</p>
 <table>
   <tr class="header">
     <td></td>
