@@ -1,5 +1,9 @@
 class BuyPostsController < ApplicationController
 
+  def index
+    @post = BuyPost.all
+  end
+
   def new
     @buy_post = BuyPost.new
   end

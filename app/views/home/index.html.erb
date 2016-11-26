@@ -10,10 +10,7 @@
   </tr>
   <% @all_sale_posts[0..4].each do |post| %>
     <tr>
-      <td><%= link_to "Post", post, :class => "button", :method => get %></td>
-      <td><%= "#{post.name}" %></td>
-      <td><%= "#{post.price}" %></td>
-      <td><%= "#{post.updated_at}" %></td>
+      <%= render post %>
     </tr>
   <% end %>
 </table>
@@ -28,10 +25,7 @@
   </tr>
   <% @all_buy_posts[0..4].each do |post| %>
     <tr>
-      <td><%= link_to "Post", post, :class => "button", :method => get %></td>
-      <td><%= "#{post.name}" %></td>
-      <td><%= "#{post.price}" %></td>
-      <td><%= "#{post.updated_at}" %></td>
+      <%= render post %>
     </tr>
   <% end %>
 </table>

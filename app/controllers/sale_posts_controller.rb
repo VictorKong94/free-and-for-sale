@@ -1,5 +1,9 @@
 class SalePostsController < ApplicationController
 
+  def index
+    @post = SalePost.all
+  end
+
   def new
     @sale_post = SalePost.new
   end
