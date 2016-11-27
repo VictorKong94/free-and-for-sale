@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, :messages
 
+  post '/messages/new', to: 'messages#new'
+
   get '/sale_posts/new', to: 'sale_posts#new', as: 'new_sale_post'
   post '/sale_posts', to: 'sale_posts#create'
 

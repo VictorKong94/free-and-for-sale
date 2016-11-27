@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :buy_posts
   has_many :sale_posts
+  has_many :messages
 end

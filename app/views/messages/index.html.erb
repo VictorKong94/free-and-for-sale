@@ -1,0 +1,6 @@
+<% @messages.each do |message| %>
+	<h2><%= message.title %></h2>
+	<%= button_to "View Message", message_path(message), :class => "buttom medium", :method => "get" %>
+<% end %>
+
+<%= button_to "New Message", new_message_path %>

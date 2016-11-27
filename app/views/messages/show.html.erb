@@ -1,0 +1,5 @@
+<h2><%= @message.title %></h2>
+<p><%= @message.description %></p>
+<%= link_to "Back", messages_path %>
+<%= link_to "Edit", edit_message_path(@message) %>
+<%= link_to "Delete", message_path(@message), method: :delete, data: { confirm: "Are you sure you want to delete your message?"} %>
