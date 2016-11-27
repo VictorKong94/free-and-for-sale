@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
   devise_for :users
-  resources :users
+  resources :users, :messages
 
   get '/sale_posts/new', to: 'sale_posts#new', as: 'new_sale_post'
   post '/sale_posts', to: 'sale_posts#create'
