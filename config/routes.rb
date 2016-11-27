@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   root to: 'home#index'
   devise_for :users
   resources :users
+  resources :messages do
+    resources :comments
+  end
+
+  post '/messages/new', to: 'messages#new'
 
   get '/sale_posts/new', to: 'sale_posts#new', as: 'new_sale_post'
   post '/sale_posts', to: 'sale_posts#create'

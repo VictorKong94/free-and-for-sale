@@ -1,44 +1,51 @@
-<h3>User</h3>
-<p>Name: <%= current_user.name %></p>
-
-<p class="header"><%= current_user.name %>'s Sale Posts</p>
-<table>
-  <tr class="header">
-    <td></td>
-    <td>Name</td>
-    <td>Asking price</td>
-    <td>Last edited</td>
-    <% if @user.id == current_user.id %>
-      <td></td>
-      <td></td>
-    <% end %>
-  </tr>
-  <% @sale_posts.each do |post| %>
-    <% unless (@user.id != current_user.id && post.sold == true) %>
-      <tr>
-        <%= render post %>
+<div>
+<h5 class="center-align">
+<div class="row">     
+  <div class="col s6">
+    <p class="header"><%= current_user.name %>'s Sale Posts</p>
+    <table>
+      <tr class="header">
+        <td></td>
+        <td>Name</td>
+        <td>Asking price</td>
+        <td>Last edited</td>
+        <% if @user.id == current_user.id %>
+          <td></td>
+          <td></td>
+        <% end %>
       </tr>
-    <% end %>
-  <% end %>
-</table>
+      <% @sale_posts.each do |post| %>
+        <% unless (@user.id != current_user.id && post.sold == true) %>
+          <tr>
+            <%= render post %>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
 
-<p class="header"><%= current_user.name %>'s Buy Posts</p>
-<table>
-  <tr class="header">
-    <td></td>
-    <td>Name</td>
-    <td>Bidding price</td>
-    <td>Last edited</td>
-    <% if @user.id == current_user.id %>
-      <td></td>
-      <td></td>
-    <% end %>
-  </tr>
-  <% @buy_posts.each do |post| %>
-    <% unless (@user.id != current_user.id && post.filled == true) %>
-      <tr>
-        <%= render post %>
+  <div class="col s6">
+    <p class="header"><%= current_user.name %>'s Buy Posts</p>
+    <table>
+      <tr class="header">
+        <td></td>
+        <td>Name</td>
+        <td>Bidding price</td>
+        <td>Last edited</td>
+        <% if @user.id == current_user.id %>
+          <td></td>
+          <td></td>
+        <% end %>
       </tr>
-    <% end %>
-  <% end %>
-</table>
+      <% @buy_posts.each do |post| %>
+        <% unless (@user.id != current_user.id && post.filled == true) %>
+          <tr>
+            <%= render post %>
+          </tr>
+        <% end %>
+      <% end %>
+    </table>
+  </div>
+
+</div>
+</div>

@@ -1,33 +1,42 @@
 <h3>Free &amp; For Sale</h3>
 
-<p class="header">Recent Sale Posts</p> <!-- Add link to see all sale posts -->
-<%= button_to "Create a Sale Post", new_sale_post_path, :class => "buttom medium", :method => "get" %>
-<table>
-  <tr>
-    <td></td>
-    <td>Name</td>
-    <td>Asking price</td>
-    <td>Last edited</td>
-  </tr>
-  <% @all_sale_posts[0..4].each do |post| %>
-    <tr>
-      <%= render post %>
-    </tr>
-  <% end %>
-</table>
+<div>
+<h5 class="center-align">
+<div class="row">     
+  <div class="col s6">
+    <p class="header">Recent Sale Posts</p> <!-- Add link to see all sale posts -->
+    <%= button_to "Create a Sale Post", new_sale_post_path, :class => "buttom medium", :method => "get" %>
+    <table>
+      <tr>
+        <td></td>
+        <td>Name</td>
+        <td>Asking price</td>
+        <td>Last edited</td>
+      </tr>
+      <% @all_sale_posts[0..4].each do |post| %>
+        <tr>
+          <%= render post %>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 
-<p class="header">Recent Buy Posts</p> <!-- Add link to see all buy posts -->
-<%= button_to "Create a Buy Post", new_buy_post_path, :class => "buttom medium", :method => "get" %>
-<table>
-  <tr>
-    <td></td>
-    <td>Name</td>
-    <td>Bidding price</td>
-    <td>Last edited</td>
-  </tr>
-  <% @all_buy_posts[0..4].each do |post| %>
-    <tr>
-      <%= render post %>
-    </tr>
-  <% end %>
-</table>
+  <div class="col s6">
+    <p class="header">Recent Buy Posts</p> <!-- Add link to see all buy posts -->
+    <%= button_to "Create a Buy Post", new_buy_post_path, :class => "buttom medium", :method => "get" %>
+    <table>
+      <tr>
+        <td></td>
+        <td>Name</td>
+        <td>Bidding price</td>
+        <td>Last edited</td>
+      </tr>
+      <% @all_buy_posts[0..4].each do |post| %>
+        <tr>
+          <%= render post %>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+</div>
