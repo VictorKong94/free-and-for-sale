@@ -1,6 +1,8 @@
 <% @messages.each do |message| %>
-	<h2><%= message.title %></h2>
-	<%= button_to "View Message", message_path(message), :class => "buttom medium", :method => "get" %>
+	<div class="col-md-4">
+		<div class="message">
+			<h2><%= message.title %></h2>
+			<%= link_to "View Message", message_path(message), class: "btn btn-custom" %>
 	</div>
 <% end %>
 
