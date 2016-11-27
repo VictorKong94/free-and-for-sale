@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
   root to: 'home#index'
   devise_for :users
-  resources :users, :messages
+  resources :users
+  resources :messages do
+    resources :comments
+  end
 
   post '/messages/new', to: 'messages#new'
 
