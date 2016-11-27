@@ -1,11 +1,15 @@
 class SalePostsController < ApplicationController
 
+  def index
+    @post = SalePost.all
+  end
+
   def new
     @sale_post = SalePost.new
   end
 
   def create
-    @sale_post = SalePost.new
+    @sale_post = SalePost.new(new_params)
     @sale_post.name = new_params[:name]
     @sale_post.user_id = current_user.id
     @sale_post.price = new_params[:price]
@@ -33,7 +37,7 @@ class SalePostsController < ApplicationController
   private
 
   def new_params
-    params.require(:item).permit(:name, :price, :photo)
+    params.require(:sale_post).permit(:name, :price, :photo)
   end
 
 end
