@@ -15,7 +15,7 @@
         <td>Asking price</td>
         <td>Last edited</td>
       </tr>
-      <% @all_sale_posts.each do |post| %>
+      <% @all_sale_posts[0..4].each do |post| %>
         <tr>
           <%= render post %>
         </tr>
@@ -35,7 +35,7 @@
         <td>Bidding price</td>
         <td>Last edited</td>
       </tr>
-      <% @all_buy_posts.each do |post| %>
+      <% @all_buy_posts[0..4].each do |post| %>
         <tr>
           <%= render post %>
         </tr>
