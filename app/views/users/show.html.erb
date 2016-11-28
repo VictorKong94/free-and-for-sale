@@ -2,7 +2,7 @@
 <h5 class="center-align">
 <div class="row">     
   <div class="col s6">
-    <p class="header"><%= current_user.name %>'s Sale Posts</p>
+    <p class="header"><%= @user.name %>'s Sale Posts</p>
     <table>
       <tr class="header">
         <td></td>
@@ -15,7 +15,7 @@
         <% end %>
       </tr>
       <% @sale_posts.each do |post| %>
-        <% unless (@user.id != current_user.id && post.sold == true) %>
+        <% unless (@user.id != @user.id && post.sold == true) %>
           <tr>
             <%= render post %>
           </tr>
@@ -25,7 +25,7 @@
   </div>
 
   <div class="col s6">
-    <p class="header"><%= current_user.name %>'s Buy Posts</p>
+    <p class="header"><%= @user.name %>'s Buy Posts</p>
     <table>
       <tr class="header">
         <td></td>
