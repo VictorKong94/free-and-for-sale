@@ -27,6 +27,7 @@ class SalePostsController < ApplicationController
   def toggle
     @sale_post = SalePost.find(params[:id])
     @sale_post.sold ^= true
+    @sale_post.save
     redirect_to current_user
   end
 
