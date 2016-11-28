@@ -1,3 +1,5 @@
-<td><%= "#{user.name}" %></td>
-<td><%= "#{@sale_posts.select(&:sold).size}" %></td>
-<td><%= "#{@buy_posts.select(&:sold).size}" %></td>
+<td><%= link_to "#{user.name}", user, :method => "get" %></td>
+<td class="right-align"><%= "#{@active_sale_posts.where(user_id: user.id).size}" %></td>
+<td class="right-align"><%= "#{@closed_sale_posts.where(user_id: user.id).size}" %></td>
+<td class="right-align"><%= "#{@active_buy_posts.where(user_id: user.id).size}" %></td>
+<td class="right-align"><%= "#{@closed_buy_posts.where(user_id: user.id).size}" %></td>
