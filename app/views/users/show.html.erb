@@ -9,23 +9,26 @@
         <td>Name</td>
         <td>Asking price</td>
         <td>Last edited</td>
+        <td>Status</td>
         <% if @user.id == current_user.id %>
-          <td></td>
           <td></td>
         <% end %>
       </tr>
       <% @sale_posts.each do |post| %>
-        <% unless (@user.id != @user.id && post.sold == true) %>
-          <tr>
-            <%= render post %>
+        <tr>
+          <%= render post %>
           <td>
-            <%= link_to "Toggle Status", sale_posts_toggle_path(id: post.id), :class => "button medium", :method => :patch %>
+            <%= post.sold ? "Sold" : "Available" %>
+            <% if @user.id == current_user.id %>
+              <%= link_to "Toggle Status", sale_posts_toggle_path(id: post.id), :class => "button medium", :method => :patch %>
+            <% end %>
           </td>
-          <td>
-            <%= link_to "Delete", sale_posts_delete_path(id: post.id), :class => "button", :method => :patch %>
-          </td>
-          </tr>
-        <% end %>
+          <% if @user.id == current_user.id %>
+            <td>
+              <%= link_to "Delete", sale_posts_delete_path(id: post.id), :class => "button", :method => :patch %>
+            </td>
+          <% end %>
+        </tr>
       <% end %>
     </table>
   </div>
@@ -38,26 +41,29 @@
         <td>Name</td>
         <td>Bidding price</td>
         <td>Last edited</td>
+        <td>Status</td>
         <% if @user.id == current_user.id %>
-          <td></td>
           <td></td>
         <% end %>
       </tr>
       <% @buy_posts.each do |post| %>
-        <% unless (@user.id != current_user.id && post.filled == true) %>
-          <tr>
-            <%= render post %>
-            <td>
-            <%= link_to "Toggle Status", buy_posts_toggle_path(id: post.id), :class => "button medium", :method => :patch %>
-          </td>
+        <tr>
+          <%= render post %>
           <td>
-            <%= link_to "Delete", buy_posts_delete_path(id: post.id), :class => "button", :method => :patch %>
+            <%= post.filled ? "Filled" : "Unfilled" %>
+            <% if @user.id == current_user.id %>
+              <%= link_to "Toggle Status", buy_posts_toggle_path(id: post.id), :class => "button medium", :method => :patch %>
+            <% end %>
           </td>
-          </tr>
-        <% end %>
+          <% if @user.id == current_user.id %>
+            <td>
+              <%= link_to "Delete", buy_posts_delete_path(id: post.id), :class => "button", :method => :patch %>
+            </td>
+          <% end %>
+        </tr>
       <% end %>
     </table>
   </div>
 
-</div>
+<!--</div>-->
 </div>
