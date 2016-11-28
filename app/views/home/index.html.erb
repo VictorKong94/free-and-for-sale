@@ -5,7 +5,9 @@
 <div class="row">     
   <div class="col s6">
     <p class="header">Recent Sale Posts</p> <!-- Add link to see all sale posts -->
-    <%= button_to "Create a Sale Post", new_sale_post_path, :class => "buttom medium", :method => "get" %>
+    <% if current_user %>
+      <%= button_to "Create a Sale Post", new_sale_post_path, :class => "buttom medium", :method => "get" %>
+    <% end %>
     <table>
       <tr>
         <td></td>
@@ -23,7 +25,9 @@
 
   <div class="col s6">
     <p class="header">Recent Buy Posts</p> <!-- Add link to see all buy posts -->
-    <%= button_to "Create a Buy Post", new_buy_post_path, :class => "buttom medium", :method => "get" %>
+    <% if current_user %>
+      <%= button_to "Create a Buy Post", new_buy_post_path, :class => "buttom medium", :method => "get" %>
+    <% end %>
     <table>
       <tr>
         <td></td>
