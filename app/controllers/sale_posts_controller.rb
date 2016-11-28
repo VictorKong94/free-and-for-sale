@@ -1,4 +1,5 @@
 class SalePostsController < ApplicationController
+  skip_before_filter :verify_authenticity_token
 
   def index
     @post = SalePost.all
@@ -9,12 +10,12 @@ class SalePostsController < ApplicationController
   end
 
   def create
-    @sale_post = SalePost.new(new_params)
-    @sale_post.name = new_params[:name]
+    @sale_post = SalePost.new
+    @sale_post.name = params[:name]
     @sale_post.user_id = current_user.id
-    @sale_post.price = new_params[:price]
+    @sale_post.price = params[:price]
     @sale_post.sold = false
-    @sale_post.photo = new_params[:photo]
+    @sale_post.photo = params[:photo]
     if @sale_post.save
       flash[:error] = nil
       redirect_to current_user
@@ -32,12 +33,6 @@ class SalePostsController < ApplicationController
   def delete
     @sale_post = SalePost.find(params[:id])
     @sale_post.destroy
-  end
-
-  private
-
-  def new_params
-    params.require(:sale_post).permit(:name, :price, :photo)
   end
 
 end
