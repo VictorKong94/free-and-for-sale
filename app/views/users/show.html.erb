@@ -2,10 +2,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
-<div>
-<h5 class="center-align">
-<!-- <div class="row">      -->
-  <div class="col s6">
+<h3 class="center"><%= @user.name %></h3>
+<br />
+<div class="row">
+  <div class="center">
     <p class="header"><%= @user.name %>'s Sale Posts</p>
     <table>
       <tr class="header">
@@ -41,7 +41,7 @@
     </table>
   </div>
 
-  <div class="col s6">
+  <div class="center">
     <p class="header"><%= @user.name %>'s Buy Posts</p>
     <table>
       <tr class="header">
@@ -76,6 +76,6 @@
       <% end %>
     </table>
   </div>
-
+</div>
 <!--</div>-->
 </div>

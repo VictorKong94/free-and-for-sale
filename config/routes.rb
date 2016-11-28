@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   post '/messages/new', to: 'messages#new'
 
+  get '/users/all', to: 'users#index'
+
   get '/sale_posts/all', to: 'sale_posts#index'
   get '/sale_posts/new', to: 'sale_posts#new', as: 'new_sale_post'
   post '/sale_posts', to: 'sale_posts#create'
