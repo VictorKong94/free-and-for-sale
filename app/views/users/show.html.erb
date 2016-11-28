@@ -30,7 +30,11 @@
                 </button>
                 <ul class="dropdown-menu" role="menu">
                   <li><%= button_to "Edit post", edit_sale_post_path(id: post.id), :class => "select-option", :method => :get %></li>
-                  <li><%= button_to "Toggle status", sale_posts_toggle_path(id: post.id), :class => "select-option", :method => :patch %></li>
+                  <% if post.sold %>
+                    <li><%= button_to "Mark available", sale_posts_toggle_path(id: post.id), :class => "select-option", :method => :patch %></li>
+                  <% else %>
+                      <li><%= button_to "Mark sold", sale_posts_toggle_path(id: post.id), :class => "select-option", :method => :patch %></li>
+                      <% end %>
                   <li><%= button_to "Delete post", sale_posts_delete_path(id: post.id), :class => "select-option", :method => :patch %></li>
                 </ul>
               </div>
@@ -66,7 +70,11 @@
                 </button>
                 <ul class="dropdown-menu" role="menu">
                   <li><%= button_to "Edit post", edit_buy_post_path(id: post.id), :class => "select-option", :method => :get %></li>
-                  <li><%= button_to "Toggle status", buy_posts_toggle_path(id: post.id), :class => "select-option", :method => :patch %></li>
+                  <% if post.filled %>
+                      <li><%= button_to "Mark unfilled", buy_posts_toggle_path(id: post.id), :class => "select-option", :method => :patch %></li>
+                  <% else %>
+                      <li><%= button_to "Mark filled", buy_posts_toggle_path(id: post.id), :class => "select-option", :method => :patch %></li>
+                  <% end %>
                   <li><%= button_to "Delete post", buy_posts_delete_path(id: post.id), :class => "select-option", :method => :patch %></li>
                 </ul>
               </div>
