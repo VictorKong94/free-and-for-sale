@@ -28,6 +28,7 @@ class BuyPostsController < ApplicationController
   def toggle
     @buy_post = BuyPost.find(params[:id])
     @buy_post.filled ^= true
+    @buy_post.save
     redirect_to current_user
   end
 
