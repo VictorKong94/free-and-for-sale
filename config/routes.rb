@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   post '/messages/new', to: 'messages#new'
 
+  get '/all_sale_posts', to: 'sale_posts#index'
+  get '/all_buy_posts', to: 'sale_posts#index'
+
   get '/sale_posts/new', to: 'sale_posts#new', as: 'new_sale_post'
   post '/sale_posts', to: 'sale_posts#create'
   get '/sale_posts/:id/edit', to: 'sale_posts#edit', as: 'edit_sale_post'

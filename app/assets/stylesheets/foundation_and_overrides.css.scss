@@ -1449,7 +1449,10 @@ $include-html-global-classes: $include-html-classes;
   text-transform: none;
 }
 .dropdown-btn {
-  width:185px;
+  width: 185px;
+}
+.inline {
+  display: inline-block;
 }
 .select-option {
   background-color: white;
