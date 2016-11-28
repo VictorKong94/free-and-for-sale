@@ -1,0 +1,26 @@
+<h3 class="center">Sale Posts</h3>
+<br />
+<div class="row">
+  <div class="center">
+    <% if current_user %>
+      <%= link_to "Create a Sale Post", new_sale_post_path, :class => "btn btn-default", :method => "get" %>
+    <% end %>
+  </div>
+  <br />
+  <table>
+    <tr>
+      <td></td>
+      <td>Name</td>
+      <td>Asking price</td>
+      <td>Last edited</td>
+    </tr>
+    <% @all_sale_posts.each do |post| %>
+      <tr>
+        <td><%= link_to image_tag(post.photo, :size=>"200x200"), :class => "button", :method => "get" %></td>
+        <td><%= "#{post.name}" %></td>
+        <td><%= "#{post.price}" %></td>
+        <td><%= "#{post.updated_at}" %></td>
+      </tr>
+    <% end %>
+</table>
+</div>

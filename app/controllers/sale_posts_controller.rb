@@ -1,7 +1,8 @@
 class SalePostsController < ApplicationController
 
   def index
-    @post = SalePost.all
+    @all_sale_posts = SalePost.where(sold: false)
+    @all_sale_posts = @all_sale_posts.sort_by { |f| f.updated_at }.reverse!
   end
 
   def new

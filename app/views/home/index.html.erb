@@ -1,4 +1,4 @@
-<h3>Free &amp; For Sale</h3>
+<h3 class="center">Free &amp; For Sale</h3>
 <br />
 <div>
 <h5 class="center-align">
@@ -6,10 +6,10 @@
   <div class="col s6">
     <div class="center">
       <% if current_user %>
-        <%= link_to "See all Sale Posts", all_sale_posts_path, :class => "btn btn-default inline", :method => "get" %>
+        <%= link_to "See all Sale Posts", sale_posts_all_path, :class => "btn btn-default inline", :method => "get" %>
         <%= link_to "Create a Sale Post", new_sale_post_path, :class => "btn btn-default", :method => "get" %>
       <% else %>
-        <%= link_to "See all Sale Posts", all_sale_posts_path, :class => "btn btn-default", :method => "get" %>
+        <%= link_to "See all Sale Posts", sale_posts_all_path, :class => "btn btn-default", :method => "get" %>
       <% end %>
     </div>
     <br />
@@ -32,10 +32,10 @@
   <div class="col s6">
     <div class="center">
       <% if current_user %>
-        <%= link_to "See all Buy Posts", all_buy_posts_path, :class => "btn btn-default inline", :method => "get" %>
+        <%= link_to "See all Buy Posts", buy_posts_all_path, :class => "btn btn-default inline", :method => "get" %>
         <%= link_to "Create a Buy Post", new_buy_post_path, :class => "btn btn-default", :method => "get" %>
       <% else %>
-        <%= link_to "See all Sale Posts", all_sale_posts_path, :class => "btn btn-default", :method => "get" %>
+        <%= link_to "See all Sale Posts", sale_posts_all_path, :class => "btn btn-default", :method => "get" %>
       <% end %>
     </div>
     <br />

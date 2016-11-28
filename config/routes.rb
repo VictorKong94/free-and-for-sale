@@ -9,9 +9,7 @@ Rails.application.routes.draw do
 
   post '/messages/new', to: 'messages#new'
 
-  get '/all_sale_posts', to: 'sale_posts#index'
-  get '/all_buy_posts', to: 'sale_posts#index'
-
+  get '/sale_posts/all', to: 'sale_posts#index'
   get '/sale_posts/new', to: 'sale_posts#new', as: 'new_sale_post'
   post '/sale_posts', to: 'sale_posts#create'
   get '/sale_posts/:id/edit', to: 'sale_posts#edit', as: 'edit_sale_post'
@@ -19,6 +17,7 @@ Rails.application.routes.draw do
   patch '/sale_posts/:id/toggle', to: 'sale_posts#toggle', as: 'sale_posts_toggle'
   patch '/sale_posts/:id/delete', to: 'sale_posts#delete', as: 'sale_posts_delete'
 
+  get '/buy_posts/all', to: 'buy_posts#index'
   get '/buy_posts/new', to: 'buy_posts#new', as: 'new_buy_post'
   post '/buy_posts', to: 'buy_posts#create'
   get '/buy_posts/:id/edit', to: 'buy_posts#edit', as: 'edit_buy_post'
