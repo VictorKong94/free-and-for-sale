@@ -26,12 +26,14 @@ class BuyPostsController < ApplicationController
 
   def toggle
     @buy_post = BuyPost.find(params[:id])
-    @buy_post.sold ^= true
+    @buy_post.filled ^= true
+    redirect_to current_user
   end
 
   def delete
     @buy_post = BuyPost.find(params[:id])
     @buy_post.destroy
+    redirect_to current_user
   end
 
 end
