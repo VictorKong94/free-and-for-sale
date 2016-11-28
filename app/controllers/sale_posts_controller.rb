@@ -24,6 +24,21 @@ class SalePostsController < ApplicationController
     end
   end
 
+  def edit
+    @sale_post = SalePost.find(params[:id])
+  end
+
+  def update
+    @sale_post = SalePost.find(params[:id])
+    if @sale_post.update_attributes(sale_post_params)
+      flash[:error] = nil
+      redirect_to current_user
+    else
+      flash[:error] = @sale_post.errors.full_messages.to_sentence
+      render 'sale_posts/edit'
+    end
+  end
+
   def toggle
     @sale_post = SalePost.find(params[:id])
     @sale_post.sold ^= true
@@ -36,5 +51,11 @@ class SalePostsController < ApplicationController
     @sale_post.destroy
     redirect_to current_user
   end
+
+  private
+
+    def sale_post_params
+      params.require(:sale_post).permit(:name, :price, :photo)
+    end
 
 end

@@ -1,0 +1,22 @@
+<div class="row">     
+  <div class="col s6 offset-s1">
+    <span class="flow-text">
+      <h3>Edit an Existing Sale Post</h3>
+      <%= form_for(@sale_post, :url => {:action => 'update'}, :id => @sale_post.id, html: { method: :put }) do |f| %>
+        
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        
+        <%= f.label :price %>
+        <%= f.number_field :price %>
+        
+        <%= f.label :photo %>
+        <%= f.text_field :photo %>
+
+        <%= f.submit "Update post", class: 'btn btn-primary' %>
+
+      <% end %>
+      <%= link_to "Back", current_user %>
+    </span>
+  </div>
+</div>

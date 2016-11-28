@@ -24,6 +24,21 @@ class BuyPostsController < ApplicationController
     end
   end
 
+  def edit
+    @buy_post = BuyPost.find(params[:id])
+  end
+
+  def update
+    @buy_post = BuyPost.find(params[:id])
+    if @buy_post.update_attributes(buy_post_params)
+      flash[:error] = nil
+      redirect_to current_user
+    else
+      flash[:error] = @buy_post.errors.full_messages.to_sentence
+      render 'buy_posts/edit'
+    end
+  end
+
   def toggle
     @buy_post = BuyPost.find(params[:id])
     @buy_post.filled ^= true
@@ -36,5 +51,11 @@ class BuyPostsController < ApplicationController
     @buy_post.destroy
     redirect_to current_user
   end
+
+  private
+
+    def buy_post_params
+      params.require(:buy_post).permit(:name, :price, :photo)
+    end
 
 end

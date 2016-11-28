@@ -29,7 +29,7 @@
                   Select an action <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                  <!-- <li><!%= button_to "Edit post", sale_posts_edit_path(id: post.id), :class => "select-option", :method => :get %></li> -->
+                  <li><%= button_to "Edit post", edit_sale_post_path(id: post.id), :class => "select-option", :method => :get %></li>
                   <li><%= button_to "Toggle status", sale_posts_toggle_path(id: post.id), :class => "select-option", :method => :patch %></li>
                   <li><%= button_to "Delete post", sale_posts_delete_path(id: post.id), :class => "select-option", :method => :patch %></li>
                 </ul>
@@ -65,7 +65,7 @@
                   Select an action <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                  <!-- <li><!%= button_to "Edit post", buy_posts_edit_path(id: post.id), :class => "select-option", :method => :get %></li> -->
+                  <li><%= button_to "Edit post", edit_buy_post_path(id: post.id), :class => "select-option", :method => :get %></li>
                   <li><%= button_to "Toggle status", buy_posts_toggle_path(id: post.id), :class => "select-option", :method => :patch %></li>
                   <li><%= button_to "Delete post", buy_posts_delete_path(id: post.id), :class => "select-option", :method => :patch %></li>
                 </ul>
