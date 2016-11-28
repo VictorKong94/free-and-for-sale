@@ -1,21 +1,6 @@
 # Free & For Sale
 ## UC Berkeley Fall 2016 CS 198: Ruby on Rails DeCal
 
-### Group Members:
-- Victor Kong (`VictorKong94`), 
-- Michael Ma (`michaelma1210`), 
-- Sally Tran (`sallyzorr`), and
-- Claudia Tse (`tseclaudia`).
-
-### Command Line Utilities
-There are several useful commands you can run from the terminal while in the
-project root directory:
-- `make new`: Initialize a new Rails application.
-- `make seed`: Simultaneously reset and seed the Rails database.
-
-
-
-
 **Title:** Free and For Sale
 
 **Team Members:** Victor Kong, Michael Ma, Sally Tran, Claudia Tse
