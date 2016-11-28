@@ -1444,6 +1444,10 @@ $include-html-global-classes: $include-html-classes;
 @import 'bootstrap';
 @import 'foundation';
 
+.btn {
+  font-family: 'Muli', sans-serif;
+  text-transform: none;
+}
 .dropdown-btn {
   width:185px;
 }
