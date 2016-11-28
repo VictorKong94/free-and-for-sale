@@ -1440,4 +1440,15 @@ $include-html-global-classes: $include-html-classes;
 // $include-legacy-visibility-classes: true;
 // $include-accessibility-classes: true;
 
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
 @import 'foundation';
+
+.dropdown-btn {
+  width:185px;
+}
+.select-option {
+  background-color: white;
+  border: 0px;
+  width: 184px;
+}

@@ -1,3 +1,7 @@
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
 <div>
 <h5 class="center-align">
 <!-- <div class="row">      -->
@@ -17,15 +21,19 @@
       <% @sale_posts.each do |post| %>
         <tr>
           <%= render post %>
-          <td>
-            <%= post.sold ? "Sold" : "Available" %>
-            <% if @user.id == current_user.id %>
-              <%= link_to "Toggle Status", sale_posts_toggle_path(id: post.id), :class => "button medium", :method => :patch %>
-            <% end %>
-          </td>
+          <td><%= post.sold ? "Sold" : "Available" %></td>
           <% if @user.id == current_user.id %>
             <td>
-              <%= link_to "Delete", sale_posts_delete_path(id: post.id), :class => "button", :method => :patch %>
+              <div class="btn-group">
+                <button type="button" class="btn dropdown-btn btn-default dropdown-toggle" data-toggle="dropdown">
+                  Select an action <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <!-- <li><!%= button_to "Edit post", sale_posts_edit_path(id: post.id), :class => "select-option", :method => :get %></li> -->
+                  <li><%= button_to "Toggle status", sale_posts_toggle_path(id: post.id), :class => "select-option", :method => :patch %></li>
+                  <li><%= button_to "Delete post", sale_posts_delete_path(id: post.id), :class => "select-option", :method => :patch %></li>
+                </ul>
+              </div>
             </td>
           <% end %>
         </tr>
@@ -49,15 +57,19 @@
       <% @buy_posts.each do |post| %>
         <tr>
           <%= render post %>
-          <td>
-            <%= post.filled ? "Filled" : "Unfilled" %>
-            <% if @user.id == current_user.id %>
-              <%= link_to "Toggle Status", buy_posts_toggle_path(id: post.id), :class => "button medium", :method => :patch %>
-            <% end %>
-          </td>
+          <td><%= post.filled ? "Filled" : "Unfilled" %></td>
           <% if @user.id == current_user.id %>
             <td>
-              <%= link_to "Delete", buy_posts_delete_path(id: post.id), :class => "button", :method => :patch %>
+              <div class="btn-group">
+                <button type="button" class="btn dropdown-btn btn-default dropdown-toggle" data-toggle="dropdown">
+                  Select an action <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                  <!-- <li><!%= button_to "Edit post", buy_posts_edit_path(id: post.id), :class => "select-option", :method => :get %></li> -->
+                  <li><%= button_to "Toggle status", buy_posts_toggle_path(id: post.id), :class => "select-option", :method => :patch %></li>
+                  <li><%= button_to "Delete post", buy_posts_delete_path(id: post.id), :class => "select-option", :method => :patch %></li>
+                </ul>
+              </div>
             </td>
           <% end %>
         </tr>
