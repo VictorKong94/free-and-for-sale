@@ -28,11 +28,13 @@ class SalePostsController < ApplicationController
   def toggle
     @sale_post = SalePost.find(params[:id])
     @sale_post.sold ^= true
+    redirect_to current_user
   end
 
   def delete
     @sale_post = SalePost.find(params[:id])
     @sale_post.destroy
+    redirect_to current_user
   end
 
 end
