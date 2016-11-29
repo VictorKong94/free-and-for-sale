@@ -50,6 +50,10 @@ User
 - Victor: 
 - Michael:
 - Sally: 
+  - implementing message & comment model, views, controller
+  - clickable & redirecting photos, and integrating message & commenting threads for correct sale/buy thread 
+  - styling of home page, account settings, log in, sign up, comments
+
 - Claudia: 
   - worked making the home page and user page for the sale and buy posts show up
   - worked on the buttons on the user's page that would toggle and delete the user's posts
