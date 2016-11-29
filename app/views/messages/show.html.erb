@@ -1,18 +1,22 @@
-<h2><%= @message.title %></h2>
-<p>Posted by <%= @message.user.email %> <%= time_ago_in_words(@message.created_at)%> ago</p>
+<body>
+  <div class="container">
+	<h2><%= @message.title %></h2>
+	<p>Posted by <%= @message.user.email %> <%= time_ago_in_words(@message.created_at)%> ago</p>
 
-<p><%= @message.description %></p>
+	<p><%= @message.description %></p>
 
-<h3> Comments: </h3>
-<%= render @message.comments %>
+	<h3> Comments: </h3>
+	<%= render @message.comments %>
 
-<h3> Reply to message: </h3>
- <%= render 'comments/form' %>
+	<h3> Reply to message: </h3>
+	 <%= render 'comments/form' %>
 
-<%= link_to "Back", messages_path %>
-<% if user_signed_in? %>
-	<% if @message.user_id == current_user.id %>
-		<%= link_to "Edit", edit_message_path(@message) %>
-		<%= link_to "Delete", message_path(@message), method: :delete, data: { confirm: "Are you sure you want to delete your message?"} %>
+	<%= link_to "Back", messages_path %>
+	<% if user_signed_in? %>
+		<% if @message.user_id == current_user.id %>
+			<%= link_to "Edit", edit_message_path(@message) %>
+			<%= link_to "Delete", message_path(@message), method: :delete, data: { confirm: "Are you sure you want to delete your message?"} %>
+		<% end %>
 	<% end %>
-<% end %>
+</div>
+</body>

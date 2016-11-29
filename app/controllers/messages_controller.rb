@@ -9,27 +9,34 @@ class MessagesController < ApplicationController
 	def show
 	end
 
-	def new
-		if SalePost.find_by_id(params[:id])
-			@post = BuyPost.find(params[:id])
-		else
-			@post = BuyPost.find_by_id(params[:id])
-		end
+	def new_sale
+		@post = SalePost.find(params[:id])
 		if @post.message
 			redirect_to message_path(@post.message)
 		else
 			@message = current_user.messages.build
 			@message = Message.new
-			if @post.is_a?(SalePost)
-				@message.sale_post = @post
-			else
-				@message.buy_post = @post
-			end
+			@message.sale_post = @post
 			@message.user = current_user
 			@message.title = @post.name
 			@message.save
 			redirect_to message_path(@message)
-		end
+		end		
+	end
+
+	def new_buy
+		@post = BuyPost.find(params[:id])
+		if @post.message
+			redirect_to message_path(@post.message)
+		else
+			@message = current_user.messages.build
+			@message = Message.new
+			@message.buy_post = @post
+			@message.user = current_user
+			@message.title = @post.name
+			@message.save
+			redirect_to message_path(@message)
+		end		
 	end
 
 	def find_message

@@ -9,6 +9,11 @@ class BuyPostsController < ApplicationController
     @buy_post = BuyPost.new
   end
 
+  def show
+    @sale_post = BuyPost.find(params[:id])
+    @message = Message.find(params[:id])
+  end 
+
   def create
     @buy_post = BuyPost.new
     @buy_post.name = params[:name]

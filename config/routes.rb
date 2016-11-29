@@ -15,7 +15,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  post '/messages/new', to: 'messages#new'
+  post '/messages/new_sale', to: 'messages#new_sale'
+  post '/messages/new_buy', to: 'messages#new_buy'
 
   get '/users', to: 'users#index'
 
