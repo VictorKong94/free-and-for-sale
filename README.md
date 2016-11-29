@@ -51,7 +51,7 @@ User
 - Michael:
 - Sally: 
 - Claudia: 
-  - worked making the home page, user page for the sale and buy posts show up
+  - worked making the home page and user page for the sale and buy posts show up
   - worked on the buttons on the user's page that would toggle and delete the user's posts
   - added user's name to the registration and account settings
   - worked on buttons that would create posts
