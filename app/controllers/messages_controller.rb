@@ -10,28 +10,25 @@ class MessagesController < ApplicationController
 	end
 
 	def new
-		@post = SalePost.find(params[:id])
+		@post = SalePost.find_by_id(params[:id])
+		if @post.nil?
+			@post = BuyPost.find_by_id(params[:id])
+		end
 		if @post.message
 			redirect_to message_path(@post.message)
 		else
 			@message = current_user.messages.build
 			@message = Message.new
+			if @post.is_a?(SalePost)
+				@message.sale_post = @post
+			else
+				@message.buy_post = @post
+			end
 			@message.user = current_user
-			@message.sale_post_id = @post
 			@message.title = @post.name
-			@message.description = @post.price 
 			@message.save
 			redirect_to message_path(@message)
 		end
-	end
-
-	def create
-		# @message = current_user.messages.build(message_params)
-		# if @message.save
-		# 	redirect_to :messages => 'index', :action=> 'index'
-		# else
-		# 	render 'new'
-		# end
 	end
 
 	def find_message
@@ -54,8 +51,4 @@ class MessagesController < ApplicationController
 		redirect_to :messages => 'index', :action=> 'index'
 	end
 
-	# private
-	# 	def message_params
-	# 		params.require(:message).permit(:post_id)
-	# 	end
 end

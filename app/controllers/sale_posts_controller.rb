@@ -14,7 +14,7 @@ class SalePostsController < ApplicationController
 
   def show
     @sale_post = SalePost.find(params[:id])
-    @messages = @sale_post.messages
+    @message = @sale_post.message
   end
 
   def create
