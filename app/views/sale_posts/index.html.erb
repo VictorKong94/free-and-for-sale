@@ -16,7 +16,7 @@
     </tr>
     <% @all_sale_posts.each do |post| %>
       <tr>
-        <td><%= link_to image_tag(post.photo, :size=>"300x300"), messages_path, :class => "button", :method => "get" %></td>
+        <td><%= link_to image_tag(post.photo, :size=>"300x300"), sale_post_path(post), :class => "button", :method => "get" %></td>
         <td><%= "#{post.name}" %></td>
         <td><%= "#{post.price}" %></td>
         <td><%= "#{post.updated_at}" %></td>
