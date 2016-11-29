@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   put '/sale_posts/:id', to: 'sale_posts#update'
   patch '/sale_posts/:id/toggle', to: 'sale_posts#toggle', as: 'sale_posts_toggle'
   patch '/sale_posts/:id/delete', to: 'sale_posts#delete', as: 'sale_posts_delete'
+  # get '/sale_posts/:id/messages', to: 
 
   get '/buy_posts', to: 'buy_posts#index'
   #get '/buy_posts/new', to: 'buy_posts#new', as: 'new_buy_post'
