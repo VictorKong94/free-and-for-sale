@@ -7,7 +7,6 @@ class MessagesController < ApplicationController
 	end
 
 	def show
-		@post = SalePost.find(params[:id])
 	end
 
 	def new_sale
