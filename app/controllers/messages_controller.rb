@@ -10,8 +10,9 @@ class MessagesController < ApplicationController
 	end
 
 	def new
-		@post = SalePost.find_by_id(params[:id])
-		if @post.nil?
+		if SalePost.find_by_id(params[:id])
+			@post = BuyPost.find(params[:id])
+		else
 			@post = BuyPost.find_by_id(params[:id])
 		end
 		if @post.message
