@@ -12,6 +12,11 @@ class SalePostsController < ApplicationController
     @sale_post = SalePost.new
   end
 
+  def show
+    @sale_post = SalePost.find(params[:id])
+    @message = @sale_post.message
+  end
+
   def create
     @sale_post = SalePost.new
     @sale_post.name = params[:name]
