@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129053534) do
+ActiveRecord::Schema.define(version: 20161129234825) do
 
   create_table "buy_posts", force: true do |t|
     t.string   "name"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20161129053534) do
     t.integer  "user_id"
     t.integer  "sale_post_id"
     t.integer  "buy_post_id"
+    t.text     "photo",        limit: 65536
   end
 
   create_table "sale_posts", force: true do |t|

@@ -2,7 +2,7 @@
   <div class="container">
 	<h2><%= @message.title %></h2>
 	<p>Posted by <%= @message.user.email %> <%= time_ago_in_words(@message.created_at)%> ago</p>
-
+    <%= image_tag @message.photo, :size=>"300x300" %>
 	<p><%= @message.description %></p>
 
 	<h3> Comments: </h3>

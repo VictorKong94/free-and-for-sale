@@ -7,7 +7,6 @@ class MessagesController < ApplicationController
 	end
 
 	def show
-		@post = SalePost.find(params[:id])
 	end
 
 	def new_sale
@@ -21,6 +20,7 @@ class MessagesController < ApplicationController
 			@message.user = current_user
 			@message.title = @post.name
 			@message.description = @post.price
+			@message.photo = @post.photo
 			@message.save
 			redirect_to message_path(@message)
 		end		
@@ -37,6 +37,7 @@ class MessagesController < ApplicationController
 			@message.user = current_user
 			@message.title = @post.name
 			@message.description = @post.price
+			@message.photo = @post.photo
 			@message.save
 			redirect_to message_path(@message)
 		end		
