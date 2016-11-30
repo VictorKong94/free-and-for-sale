@@ -48,6 +48,12 @@ User
 **Division of Labor:**
 
 - Victor: 
+  - Created User, BuyPost, SalePost models, views, controllers
+  - Created home views and controllers
+  - Used Devise to implement user authentication
+  - Created links, buttons, and routes for \*Posts
+  - Much debugging
+
 - Michael:
 - Sally: 
   - implementing message & comment model, views, controller
