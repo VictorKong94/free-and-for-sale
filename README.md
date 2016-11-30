@@ -48,7 +48,13 @@ User
 **Division of Labor:**
 
 - Victor: 
+
 - Michael:
+  - added routes for sale and buy posts
+  - specified toggling options for marking items as available/unavailable
+  - fixed bug with accessing sale posts for user
+  - recorded screencast demo 
+
 - Sally: 
   - implementing message & comment model, views, controller
   - clickable & redirecting photos, and integrating message & commenting threads for correct sale/buy thread 
